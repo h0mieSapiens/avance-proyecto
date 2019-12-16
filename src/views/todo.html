@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="todo.css">
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css">
+	<link rel="stylesheet" href="style.css">
+	<title>Lista de Tareas</title>
+</head>
+
+<body>
+	<nav>
+		<div class="logo">
+			<h4>My App</h4>
+
+			<div class="hamburger">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
+			<ul class="nav-links">
+				<li><a href="login.html">Log in</a></li>
+				<li><a href="#">Projects</a></li>
+				<li><a href="calendar.html">Calendar</a></li>
+				<li><a href="todo.html">To Do's</a></li>
+
+			</ul>
+		</div>
+	</nav>
+	<hr>
+	<div class="principal">
+		<div class="wrap">
+			<form class="formulario" action="">
+				<input type="text" id="tareaInput" placeholder="Agrega tu tarea">
+				<input type="button" class="boton" id="btn-agregar" value="Agregar Tarea">
+			</form>
+		</div>
+	</div>
+
+	<div class="tareas">
+		<div class="wrap">
+			<ul class="lista" id="lista">
+				
+			</ul>
+		</div>
+	</div>
+	<script src="app.js"></script>
+	<script src="todo.js"></script>
+</body>
+
+</html>
