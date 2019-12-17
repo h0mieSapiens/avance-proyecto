@@ -33,9 +33,9 @@ const indexRoutes = require('./routes/index');
 
 
 //settings
-app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + 'src/views'));
 var ejs = require('ejs');
-app.set('views',__dirname + '/views');
+app.set('views',__dirname + 'src/views');
 app.engine('html',ejs.renderFile);
 app.set('view engine',ejs);
 
