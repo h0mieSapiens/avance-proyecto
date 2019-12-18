@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 const morgan=require('morgan');
 const mongoose=require('mongoose');
-
+const bodyparser=require('body-parser');
 
 
 
@@ -29,15 +29,17 @@ mongoose.connect('mongodb://localhost/proyecto')
 
 //importar rutas
 const indexRoutes = require('./routes/index');
-
+app.use("",indexRoutes);
 
 
 //settings
-app.use(express.static(__dirname + 'src/views'));
+console.log(__dirname);
+app.use(express.static(__dirname + '/views'));
 var ejs = require('ejs');
-app.set('views',__dirname + 'src/views');
+app.set('views',__dirname + '/views');
 app.engine('html',ejs.renderFile);
 app.set('view engine',ejs);
+
 
 
 
