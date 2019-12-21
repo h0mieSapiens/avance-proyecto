@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Projects</title>
@@ -30,6 +30,7 @@
             </ul>
         </div>
     </nav>
+    
     <div class="container">
         <div class="row">
             <!--form-->
@@ -64,7 +65,25 @@
 
                     </thead>
                     <tbody>
-
+                        <% for(var i=0; i < tasks.length; i++) { %>
+                            <tr>
+                              <td><%= i + 1%></td>
+                              <td><strong><%= tasks[i].title %></strong></td>
+                              <td><%= tasks[i].description %></td>
+                              <td>
+                                <a
+                                  class="<%= tasks[i].status ? 'btn btn-success' : 'btn btn-dark'%>"
+                                  href="/turn/<%= tasks[i]._id %>">Done</a>
+                                <a href="/delete/<%= tasks[i]._id %>"
+                                  class="btn btn-danger">
+                                  Delete
+                                </a>
+                                <a href="/edit/<%= tasks[i]._id %>" class="btn btn-info">
+                                  Edit
+                                </a>
+                              </td>
+                            </tr>
+                          <% } %>
                     </tbody>
 
                 </table>
